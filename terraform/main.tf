@@ -22,7 +22,7 @@ variable "environment" {
   default = [
     {
       name  = "NEW_FEATURE"
-      value = false
+      value = true #changed
     },
   ]
 }
@@ -30,7 +30,7 @@ variable "environment" {
 module "ecs" {
   source = "terraform-aws-modules/ecs/aws"
 
-  cluster_name = "sctp-my-app-cluster" #Change
+  cluster_name = "sctp-my-app-endless-cluster" #Change
 
   fargate_capacity_providers = {
     FARGATE = {
@@ -41,16 +41,16 @@ module "ecs" {
   }
 
   services = {
-    sctp-my-app = { #task def and service name -> #Change
+    sctp-my-app-endless = { #task def and service name -> #Change
       cpu    = 512
       memory = 1024
 
       # Container definition(s)
       container_definitions = {
 
-        sctp-my-app = { #container name
+        sctp-my-app-endless = { #container name
           essential = true
-          image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-my-app:latest"
+          image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-my-app-endless:latest"
           port_mappings = [
             {
               name          = "sctp-my-app-endless" #container name
