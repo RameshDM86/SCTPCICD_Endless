@@ -53,7 +53,7 @@ module "ecs" {
           image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-my-app:latest"
           port_mappings = [
             {
-              name          = "sctp-my-app" #container name
+              name          = "sctp-my-app-endless" #container name
               containerPort = 5000
               protocol      = "tcp"
             }
