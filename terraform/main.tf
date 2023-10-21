@@ -71,7 +71,7 @@ module "ecs" {
 }
 
 resource "aws_security_group" "allow_sg" {
-  name        = "allow_tls"
+  name        = "allow_tls-endless" #changed security name
   description = "Allow traffic"
   vpc_id      = data.aws_vpc.selected.id
 
