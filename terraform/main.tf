@@ -1,14 +1,14 @@
 data "aws_vpc" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["sctp-sandbox-vpc-vpc"]
+    values = ["main-vpc"] # changed VPC
   }
 }
 
 data "aws_subnets" "public" {
   filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.selected.id]
+    name   = "tag:Name" # changes tag name
+    values = ["main-subnet-public1-us-east-1a"] #changed public subnet
   }
 }
 
