@@ -1,11 +1,11 @@
 {
-    "family": "sctp-my-app",
+    "family": "sctp-my-app-endless",
     "executionRoleArn": "arn:aws:iam::255945442255:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "sctp-my-app",
-            "image": "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-my-app:latest",
+            "name": "sctp-my-app-endless",
+            "image": "255945442255.dkr.ecr.us-east-1.amazonaws.com/sctp-my-app-endless:latest", 
             "portMappings": [
                 {
                     "containerPort": 5000,

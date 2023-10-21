@@ -48,7 +48,7 @@ module "ecs" {
       # Container definition(s)
       container_definitions = {
 
-        sctp-my-app-endless = { #container name
+        sctp-my-app-endless = { #container name - also refer to ecs-task-definition.json
           essential = true
           image     = "255945442255.dkr.ecr.us-east-1.amazonaws.com/sctp-my-app-endless:latest" #changed
           port_mappings = [
