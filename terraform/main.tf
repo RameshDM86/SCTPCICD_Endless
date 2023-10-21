@@ -50,7 +50,7 @@ module "ecs" {
 
         sctp-my-app-endless = { #container name
           essential = true
-          image     = "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-my-app-endless:latest"
+          image     = "255945442255.dkr.ecr.us-east-1.amazonaws.com/sctp-my-app-endless:latest" #changed
           port_mappings = [
             {
               name          = "sctp-my-app-endless" #container name
