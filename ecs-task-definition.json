@@ -1,0 +1,30 @@
+{
+    "family": "sctp-my-app",
+    "executionRoleArn": "arn:aws:iam::255945442255:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "sctp-my-app",
+            "image": "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-my-app:latest",
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "NEW_FEATURE",
+                    "value": false
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
